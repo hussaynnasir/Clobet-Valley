@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: fa8c3723131fb3549ba021ec659ddc9f
+guid: 73d92538cf34a4b499accb4c4fb2ea66
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: sky_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -115,11 +116,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sky_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 1300
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db70e4be09c5c74429917c927cbde9e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 99b2b68ac77c5a1408ffc5bc1399a8d8
+    spriteID: 93698e34eafdff74db7cbeb80ec8041f
     vertices: []
     indices: 
     edges: []

@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: fa8c3723131fb3549ba021ec659ddc9f
+guid: 151162cea3a1f58428621ab97af736fd
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: pah_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -115,11 +116,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pah_0
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 38
+        width: 1043
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce793931486735488cb4b044b18afc1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 99b2b68ac77c5a1408ffc5bc1399a8d8
+    spriteID: 17b052143e3834d44aa815e4768aacee
     vertices: []
     indices: 
     edges: []

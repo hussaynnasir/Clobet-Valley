@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     //Check if the player is moving
     private bool moving;
 
+    //Check if player is shooting
+    private bool shoot;
+
     //The speed at the which the player will move
     public float moveSpeed = 5f;
 
@@ -29,6 +32,9 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprt = GetComponent<SpriteRenderer>();
+        shoot = false;
+        anim.SetBool("Moving", moving);
+        
         
 
         GetPositions();
@@ -38,11 +44,24 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckPositionBoundary();
+        Attack();
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+    private void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetBool("Shoot", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            anim.SetBool("Shoot", false);
+        }
     }
 
     private void MovePlayer()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-	public PlayerController Swoop, Bunny, Panda;
+
 
 	public PlayerController player;
 
@@ -34,21 +34,4 @@ public class CameraController : MonoBehaviour {
 
     }
 
-	void checkForCorrectCameraTarget()
-	{
-		switch (playerSkin) 
-		{
-		case 1:
-			player = Swoop;
-			break;
-
-		case 2:
-			player = Panda;
-			break;
-
-		case 3:
-			player = Bunny;
-			break;
-		}
-	}
 }

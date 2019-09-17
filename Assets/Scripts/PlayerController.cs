@@ -14,17 +14,28 @@ public class PlayerController : MonoBehaviour
     //Check if the player is moving
     private bool moving;
 
+    //Check which direction player is looking in
+    public static bool LookRight;
+
+    //Check Ground Position
+    [SerializeField]
+    private bool grounded;
+    public LayerMask groundLayers;
+
     //Check if player is shooting
     private bool shoot;
+
+    //Shooting Mechanism
+    public GameObject projectile;
+    public Transform shootPosition;
 
     //The speed at the which the player will move
     public float moveSpeed = 5f;
 
-    //The limit the gameobject can move either up or down
-    public float upperBoundary, lowerBoundary;
+    //The speed at the which the player will jump
+    public float jumpSpeed = 7f;
 
-    //The Enemy to be attacked
-    public Transform enemyPosition;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +44,10 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprt = GetComponent<SpriteRenderer>();
         shoot = false;
-        anim.SetBool("Moving", moving);
-        
-        
+        //   grounded = false;
+        //moveSpeed = moveSpeed * Time.deltaTime;
+
+
 
         GetPositions();
     }
@@ -43,94 +55,177 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckPositionBoundary();
-        Attack();
+
+        SetAnimBool();
+        GroundCheck();
+
+        InitialLocationSet();
+
+
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+        DirectionCheck();
+
     }
 
-    private void Attack()
+    private void SetAnimBool()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetBool("Shoot", true);
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            anim.SetBool("Shoot", false);
-        }
+        anim.SetBool("Moving", moving);
+        anim.SetBool("Shoot", shoot);
+        anim.SetBool("Grounded", grounded);
     }
+
+
+    
 
     private void MovePlayer()
     {
         {   //Move The Player
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                transform.Translate(Vector2.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
+                rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
                 moving = true;
                 sprt.flipX = false;
             }
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                transform.Translate(Vector2.left * Input.GetAxis("Horizontal") * -moveSpeed * Time.deltaTime);
+                rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
                 moving = true;
                 sprt.flipX = true;
             }
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                transform.Translate(Vector2.up * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-         //       moving = true;
+                if (grounded == true)
+                {
+                    JumpFunction();
+                    grounded = false;
+                }
             }
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                transform.Translate(Vector2.down * Input.GetAxis("Vertical") * -moveSpeed * Time.deltaTime);
-           //     moving = true;
+                Attack();
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                StopAttack();
+            }
+            {
+                /*
+                     if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+                    {
+                      transform.Translate(Vector2.down * Input.GetAxis("Vertical") * -moveSpeed * Time.deltaTime);
+                      moving = true;
+                    }
+                 */
             }
         }
+
         //Check if the player has stopped moving
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)
             || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W))
         {
             moving = false;
+            rb2d.velocity = new Vector2(0, 0);
         }
 
-        if (moving==true)
-        {
-            anim.SetBool("Moving", true);
-        }
-        else
-        {
-            anim.SetBool("Moving", false);
-        }
     }
 
-    private void CheckPositionBoundary()
-    {
-        if (transform.position.y<lowerBoundary)
-        {
-            transform.position = new Vector2(transform.position.x, lowerBoundary);
-        }
-        if (transform.position.y>upperBoundary)
-        {
-            transform.position = new Vector2(transform.position.x, upperBoundary);
-        }
-    }
+
 
     private void GetPositions()
     {
         positionInitial = gameObject.transform.position;
     }
 
-    public void AttackEnemy()
+    private void InitialLocationSet()
     {
-        Vector3 desiredPos = enemyPosition.position - new Vector3(0.5f,0);
-        Vector3 playerPos = gameObject.transform.position;
-        Vector3 smoothedPos = Vector3.Lerp(playerPos, desiredPos, moveSpeed * Time.deltaTime);
-        transform.position = smoothedPos;
-        CodeMonkey.Utils.UtilsClass.ShakeCamera(0.1f, 0.1f);
+        if (transform.position.x < positionInitial.x) 
+        {
+            transform.position = new Vector2(positionInitial.x, transform.position.y);
+        }
+    }
+
+    private void DirectionCheck()
+    {
+        if (sprt.flipX==false)
+        {
+            LookRight = true;
+        }
+        if (sprt.flipX==true)
+        {
+            LookRight = false;
+        }
+    }
+
+    private void GroundCheck()
+    {
+        grounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 2.5f, transform.position.y - 2.2f),
+            new Vector2(transform.position.x + 2.5f, transform.position.y - 2.25f), groundLayers);
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.5f);
+        Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y - 3.2505f),
+            new Vector2(1, -2.2501f));
+    }
+
+    public void MoveFunction()
+    {
+        rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
+        moving = true;
+    }
+
+    public void JumpFunction()
+    {
+        if (rb2d.velocity.y == 0)
+        {
+            rb2d.AddForce(Vector2.up * jumpSpeed);
+        }
+    }
+
+
+    public void Attack()
+    {
+        if (shoot == true)
+        {
+            shoot = false;
+        }
+        shoot = true;
+    }
+
+    public void StopAttack()
+    {
+        shoot = false;
+    }
+
+    private void CreateFireBall()
+    {
+        GameObject fireBall = Instantiate(projectile, shootPosition.position, Quaternion.identity) as GameObject;
+        fireBall.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 10f);
+        StopAttack();
     }
     
+
+    public void StopMove()
+    {
+        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+        moving = false;
+    }
+    
+   
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+      
+    }
+
+  
+
+
 }

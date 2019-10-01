@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     //Check Ground Position
     [SerializeField]
-    private bool grounded;
+    public bool grounded;
     public LayerMask groundLayers;
 
     //Check if player is shooting
@@ -225,7 +225,16 @@ public class PlayerController : MonoBehaviour
       
     }
 
-  
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Pill"))
+        {
+            GameManager.pillCounter += 1;
+            collision.gameObject.SetActive(false);
+        }
+    }
+
+
 
 
 }

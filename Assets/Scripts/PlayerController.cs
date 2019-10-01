@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     //The speed at the which the player will jump
     public float jumpSpeed = 7f;
-
+    
 
 
     // Start is called before the first frame update

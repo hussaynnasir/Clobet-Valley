@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     //Check if the player is moving
     private bool moving;
+    private bool runMove;
 
     //Check which direction player is looking in
     public static bool LookRight;
@@ -31,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public GameObject projectile;
     public Transform shootPosition;
 
+    //Sound
+    public AudioManager audioManager;
+
     //The speed at the which the player will move
     public float moveSpeed = 5f;
 
@@ -40,6 +44,8 @@ public class PlayerController : MonoBehaviour
     public CapsuleCollider2D deathCollider;
 
     private CapsuleCollider2D normalCollider;
+
+    public GameManager gameManager;
     
 
 
@@ -54,7 +60,9 @@ public class PlayerController : MonoBehaviour
         //   grounded = false;
         //moveSpeed = moveSpeed * Time.deltaTime;
 
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         GetPositions();
     }
@@ -69,6 +77,15 @@ public class PlayerController : MonoBehaviour
 
         InitialLocationSet();
 
+        if (GameManager.stageFinished==false)
+        { 
+            AutoMovetoLocation();
+        }
+
+        if (GameManager.stageFinished==true)
+        {
+            StopMove();
+        }
 
     }
 
@@ -90,9 +107,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!dead)
+        if (!dead || !GameManager.stageFinished || !GameManager.checkpointReached) 
         {
             MovePlayer();
+        }
+        if (dead || GameManager.stageFinished)
+        {
+            StopMove();
         }
         DirectionCheck();
 
@@ -104,6 +125,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Shoot", shoot);
         anim.SetBool("Grounded", grounded);
         anim.SetBool("Dead", dead);
+        anim.SetBool("Run", runMove);
     }
 
 
@@ -209,7 +231,18 @@ public class PlayerController : MonoBehaviour
     public void MoveFunction(float moveSpeed)
     {
         rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
-        moving = true;
+        if (GameManager.checkpointReached == false)
+        {
+            runMove = true;
+            moving = false;
+        }
+
+        if (GameManager.checkpointReached == true)
+        {
+            runMove = false;
+            moving = true;
+        }
+
         if (moveSpeed<0)
         {
             sprt.flipX = true;
@@ -224,6 +257,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         moving = false;
+        runMove = false;
     }
 
     public void JumpFunction(float jumpSpeed)
@@ -282,11 +316,31 @@ public class PlayerController : MonoBehaviour
         if (collision.tag.Equals("Pill"))
         {
             GameManager.pillCounter += 1;
+            HealthManager.curHealth += 20;
+            audioManager.PlayCollectSound();
             collision.gameObject.SetActive(false);
         }
 
-       
+        if (collision.tag.Equals("Checkpoint"))
+        {
+            GameManager.checkpointReached = true;
+        }
+        
     }
+
+    public void AutoMovetoLocation()
+    {
+        if (GameManager.checkpointReached==true)
+        { 
+            MoveFunction(moveSpeed);
+            if (transform.position.x == gameManager.moveToLocation.position.x)
+            {
+                GameManager.stageFinished = true;
+            }
+        }
+    }
+
+    
 
 
 

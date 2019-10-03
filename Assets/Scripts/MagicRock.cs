@@ -7,15 +7,20 @@ public class MagicRock : MonoBehaviour
 
     public int rockHealth = 3;
     public float rockMoveSpeed = 2.0f;
-    public bool dirUp;
+    private bool dirUp;
 
-    public float knockbackForce = 1.0f;
+    public float damageAmount = 1.0f;
+
+    private float knockbackForce = 1.0f;
     
     private SpriteRenderer sprt;
 
     public float upperLimit = 0.0f, lowerLimit = -3.0f;
 
     private PlayerController player;
+    
+    public AudioManager audioManager;
+
 
 
     // Start is called before the first frame update
@@ -23,6 +28,7 @@ public class MagicRock : MonoBehaviour
     {
         sprt = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
 
@@ -79,7 +85,7 @@ public class MagicRock : MonoBehaviour
      
         if (collision.tag.Equals("Player"))
         {
-            HealthManager.curHealth -= 20;
+            HealthManager.curHealth -= 20 * damageAmount;
 
             CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
 
@@ -91,6 +97,7 @@ public class MagicRock : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             rockHealth -= 1;
+            audioManager.PlayFireHit();
             CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
         }
     }

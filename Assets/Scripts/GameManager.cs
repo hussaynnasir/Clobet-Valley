@@ -11,11 +11,31 @@ public class GameManager : MonoBehaviour
 
     public Image pillBar;
 
+    public GameObject deathPanel;
+
+    public GameObject completionPanel;
+
+    public static bool checkpointReached;
+
+    public static bool stageFinished;
+
+    public Transform moveToLocation;
+
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         int scenePills = GameObject.FindGameObjectsWithTag("Pill").Length;
+        
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
         maxPills = scenePills;
+        stageFinished = false;
+        checkpointReached = false;
+
+        deathPanel.SetActive(false);
+        completionPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +44,25 @@ public class GameManager : MonoBehaviour
 
         pillBar.fillAmount = pillCounter / maxPills;
         PillChecker();   
+
+        if (stageFinished==true)
+        {
+            Debug.Log("Stage Complete");
+            completionPanel.SetActive(true);
+        }
+
+        if (checkpointReached==true)
+        {
+            Debug.Log("CheckPoint Reached");
+        }
+
+        if (HealthManager.dead)
+        {
+            deathPanel.SetActive(true);
+            audioManager.PlayDeathSound();
+        }
+
+
     }
 
     private void PillChecker()

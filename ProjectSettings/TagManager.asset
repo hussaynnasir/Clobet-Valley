@@ -10,6 +10,7 @@ TagManager:
   - Pill
   - Platform
   - EnemyFire
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

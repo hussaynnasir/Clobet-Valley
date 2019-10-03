@@ -10,6 +10,8 @@ public class FireBall : MonoBehaviour
     private Rigidbody2D prb2d;
     private SpriteRenderer psprt;
 
+    public AudioManager audioManager;
+
     private bool destroyCheck;
 
     // Start is called before the first frame update
@@ -18,6 +20,10 @@ public class FireBall : MonoBehaviour
         prb2d = GetComponent<Rigidbody2D>();
         psprt = GetComponent<SpriteRenderer>();
         destroyCheck = false;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        audioManager.PlayFireLeave();
+
 
         if (PlayerController.LookRight==true)
         { 

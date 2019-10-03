@@ -9,16 +9,22 @@ public class MagicRock : MonoBehaviour
     public float rockMoveSpeed = 2.0f;
     public bool dirUp;
 
+    public float knockbackForce = 1.0f;
+    
     private SpriteRenderer sprt;
 
     public float upperLimit = 0.0f, lowerLimit = -3.0f;
+
+    private PlayerController player;
 
 
     // Start is called before the first frame update
     void Start()
     {
         sprt = GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -70,11 +76,15 @@ public class MagicRock : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+     
         if (collision.tag.Equals("Player"))
         {
             HealthManager.curHealth -= 20;
 
             CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
+
+         //   StartCoroutine(player.Knockback(0.02f, 350, player.transform.position));
+            
         }
 
         if (collision.tag.Equals("PlayerFire"))

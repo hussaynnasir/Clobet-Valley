@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - Pill
   - Platform
+  - EnemyFire
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2436814307
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 3556730949
     locked: 0

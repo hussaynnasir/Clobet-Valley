@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
 
     public  float maxHealth = 100f;
     public static float curHealth;
-    public bool dead;
+    public static bool dead;
 
     public Image healthBar;
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     private Vector2 initialLocation;
+
+    private Animator anim;
     
     public bool playerColliding;
 
@@ -13,7 +15,7 @@ public class Platform : MonoBehaviour
     public PlayerController playerController;
 
     BoxCollider2D boxCollider2D;
-    
+        
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,9 @@ public class Platform : MonoBehaviour
         playerColliding = false;
         initialLocation = transform.position;
         boxCollider2D = GetComponent<BoxCollider2D>();
+
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class Platform : MonoBehaviour
         // PositionCheck();
         // PositionReturn();
         SetCollider();
+        AnimationCheck();
     }
 
     private void PositionCheck()
@@ -60,6 +65,18 @@ public class Platform : MonoBehaviour
             {
                 boxCollider2D.enabled = true;
             }
+        }
+    }
+
+    private void AnimationCheck()
+    {
+        if (playerColliding == true) 
+        {
+            anim.enabled = false;
+        }
+        if (playerColliding == false) 
+        {
+            anim.enabled = true;
         }
     }
 

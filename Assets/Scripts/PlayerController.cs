@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     //Check if player is shooting
     private bool shoot;
 
+    public bool dead;
+
     //Shooting Mechanism
     public GameObject projectile;
     public Transform shootPosition;
@@ -34,6 +36,10 @@ public class PlayerController : MonoBehaviour
 
     //The speed at the which the player will jump
     public float jumpSpeed = 7f;
+
+    public CapsuleCollider2D deathCollider;
+
+    private CapsuleCollider2D normalCollider;
     
 
 
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprt = GetComponent<SpriteRenderer>();
+        normalCollider = GetComponent<CapsuleCollider2D>();
         shoot = false;
         //   grounded = false;
         //moveSpeed = moveSpeed * Time.deltaTime;
@@ -58,15 +65,35 @@ public class PlayerController : MonoBehaviour
 
         SetAnimBool();
         GroundCheck();
+        DeathCheck();
 
         InitialLocationSet();
 
 
     }
 
+    private void DeathCheck()
+    {
+        dead = HealthManager.dead;
+        if (dead==true)
+        {
+            normalCollider.enabled = false;
+            deathCollider.enabled = true;
+        }
+        else
+        {
+            deathCollider.enabled = false;
+            normalCollider.enabled = true;
+        }
+
+    }
+
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!dead)
+        {
+            MovePlayer();
+        }
         DirectionCheck();
 
     }
@@ -76,6 +103,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Moving", moving);
         anim.SetBool("Shoot", shoot);
         anim.SetBool("Grounded", grounded);
+        anim.SetBool("Dead", dead);
     }
 
 
@@ -86,21 +114,23 @@ public class PlayerController : MonoBehaviour
         {   //Move The Player
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
-                moving = true;
-                sprt.flipX = false;
+                //    rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
+                //    moving = true;
+                //    sprt.flipX = false;
+                MoveFunction(moveSpeed);
             }
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
-                moving = true;
-                sprt.flipX = true;
+                //    rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
+                //    moving = true;
+                //    sprt.flipX = true;
+                MoveFunction(-moveSpeed);
             }
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 if (grounded == true)
                 {
-                    JumpFunction();
+                    JumpFunction(jumpSpeed);
                     grounded = false;
                 }
             }
@@ -129,8 +159,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)
             || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W))
         {
-            moving = false;
-            rb2d.velocity = new Vector2(0, 0);
+            //moving = false;
+            //rb2d.velocity = new Vector2(0, 0);
+            StopMove();
         }
 
     }
@@ -175,13 +206,27 @@ public class PlayerController : MonoBehaviour
             new Vector2(1, -2.2501f));
     }
 
-    public void MoveFunction()
+    public void MoveFunction(float moveSpeed)
     {
         rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
         moving = true;
+        if (moveSpeed<0)
+        {
+            sprt.flipX = true;
+        }
+        if (moveSpeed>0)
+        {
+            sprt.flipX = false;
+        }
     }
 
-    public void JumpFunction()
+    public void StopMove()
+    {
+        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+        moving = false;
+    }
+
+    public void JumpFunction(float jumpSpeed)
     {
         if (rb2d.velocity.y == 0)
         {
@@ -212,13 +257,20 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    public void StopMove()
-    {
-        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
-        moving = false;
-    }
+  
     
-   
+    public IEnumerator Knockback(float knockDur, float knockPower, Vector3 knockDirection)
+    {
+        float timer = 0;
+
+        while (knockDur>timer)
+        {
+            timer += Time.deltaTime;
+            rb2d.AddForce(new Vector3(knockDirection.x * -100, knockDirection.y * knockPower, transform.position.z));
+        }
+
+        yield return 0;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -232,6 +284,8 @@ public class PlayerController : MonoBehaviour
             GameManager.pillCounter += 1;
             collision.gameObject.SetActive(false);
         }
+
+       
     }
 
 

@@ -9,6 +9,7 @@ public class FireBall : MonoBehaviour
 
     private Rigidbody2D prb2d;
     private SpriteRenderer psprt;
+    
 
     public AudioManager audioManager;
 
@@ -48,6 +49,18 @@ public class FireBall : MonoBehaviour
         if (collision.tag.Equals("OutsideFrame"))
         {
             Destroy(gameObject);
+        }
+
+        if (collision.tag.Equals("Bubble"))
+        {
+            BubbleShooter.bubbleHitCounter += 1;
+            if (BubbleShooter.bubbleHitCounter <= 4) 
+            {
+                audioManager.PlayFireHit();
+                collision.gameObject.SetActive(false);
+                gameObject.SetActive(false);
+                Debug.Log("Bubble Counter is: " + BubbleShooter.bubbleHitCounter);
+            }
         }
     }
 

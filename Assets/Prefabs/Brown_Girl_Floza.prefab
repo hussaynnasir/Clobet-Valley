@@ -201,9 +201,11 @@ MonoBehaviour:
   projectile: {fileID: 3550413230146685045, guid: f93eeb6f4c7d51f4bba44b4c3f034b5b,
     type: 3}
   shootPosition: {fileID: 2358684342383538986}
+  audioManager: {fileID: 0}
   moveSpeed: 5
   jumpSpeed: 300
   deathCollider: {fileID: 1157370060}
+  gameManager: {fileID: 0}
 --- !u!50 &2358684342928023177
 Rigidbody2D:
   serializedVersion: 4

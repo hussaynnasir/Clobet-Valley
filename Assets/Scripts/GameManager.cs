@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject completionPanel;
 
+    public GameObject platformToDisable;
+
     public static bool checkpointReached;
 
     public static bool stageFinished;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
     public Transform moveToLocation;
 
     public AudioManager audioManager;
+
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
 
         if (checkpointReached==true)
         {
+            platformToDisable.SetActive(false);
             Debug.Log("CheckPoint Reached");
         }
 
@@ -60,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             deathPanel.SetActive(true);
             audioManager.PlayDeathSound();
+            music.Stop();
         }
 
 

@@ -11,6 +11,7 @@ TagManager:
   - Platform
   - EnemyFire
   - Checkpoint
+  - Bubble
   layers:
   - Default
   - TransparentFX

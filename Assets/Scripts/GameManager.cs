@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject completionPanel;
 
     public GameObject platformToDisable;
-
+    
     public static bool checkpointReached;
 
     public static bool stageFinished;
@@ -82,10 +82,6 @@ public class GameManager : MonoBehaviour
         {
             pillCounter = maxPills;
         }
-
-
-     
-
 
     }
 }

@@ -133,5 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleMoveSpeed: 4
   donutMoveSpeedCurrent: 0
+  damageAmount: 20
   donutMove: 0
   objectName: 

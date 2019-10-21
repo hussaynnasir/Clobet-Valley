@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BubbleShooter : MonoBehaviour
 {
-    public GameObject bubble;
+    public GameObject[] bubble;
     public Transform bubbleShootingPosition;
+    
 
     public float bubbleTravelSpeed = 5.0f;
 
@@ -21,9 +22,13 @@ public class BubbleShooter : MonoBehaviour
 
     public float upperLimit = 0.0f, lowerLimit = -3.0f;
 
+    public int lowerRange, higherRange;
+    
+
     // Start is called before the first frame update
     void Start()
     {
+
         stopShootingBubbles = false;
     }
 
@@ -41,15 +46,22 @@ public class BubbleShooter : MonoBehaviour
         {
             StartCoroutine(ShootOnce());
         }
-
+        
+        
     }
+
 
     public void CreateBubble()
     {
-        GameObject projectile = Instantiate(bubble, bubbleShootingPosition.position, Quaternion.identity);
-        bubble.GetComponent<Rigidbody2D>().AddForce(Vector2.right * -bubbleTravelSpeed);
+        GameObject projectile = Instantiate(bubble[Random.Range(lowerRange, higherRange)], bubbleShootingPosition.position, Quaternion.identity);
+        if (projectile.gameObject.tag.Equals("Bubble")) 
+        {
+            bubble[Random.Range(lowerRange, higherRange)].GetComponent<Rigidbody2D>().AddForce(Vector2.right * -bubbleTravelSpeed);
+        }
         StopShoot();
     }
+
+    
 
     private void ShooterPositionCheck()
     {
@@ -84,11 +96,13 @@ public class BubbleShooter : MonoBehaviour
     public void StopShoot()
     {
         stopShootingBubbles = true;
+
     }
 
     private IEnumerator ShootOnce()
     {
-        CreateBubble();
+       
+            CreateBubble();
         yield return new WaitForSeconds(BubbleSpawnTime);
         stopShootingBubbles = false;
 

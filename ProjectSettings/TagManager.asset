@@ -12,6 +12,8 @@ TagManager:
   - EnemyFire
   - Checkpoint
   - Bubble
+  - Enemy
+  - Dress
   layers:
   - Default
   - TransparentFX

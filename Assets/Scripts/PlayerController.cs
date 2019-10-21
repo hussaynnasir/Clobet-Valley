@@ -316,11 +316,18 @@ public class PlayerController : MonoBehaviour
         if (collision.tag.Equals("Pill"))
         {
             GameManager.pillCounter += 1;
-            HealthManager.curHealth += 20;
             audioManager.PlayCollectSound();
-            collision.gameObject.SetActive(false);
+            if (collision.name.Equals("Pill"))
+            {
+                HealthManager.curHealth += 20;
+                collision.gameObject.SetActive(false);
+            }
+            else
+            {
+                HealthManager.curHealth += 4;
+            }
         }
-
+        
         if (collision.tag.Equals("Checkpoint"))
         {
             GameManager.checkpointReached = true;

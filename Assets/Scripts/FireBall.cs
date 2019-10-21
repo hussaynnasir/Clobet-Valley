@@ -59,8 +59,16 @@ public class FireBall : MonoBehaviour
                 audioManager.PlayFireHit();
                 collision.gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                Debug.Log("Bubble Counter is: " + BubbleShooter.bubbleHitCounter);
+                CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
+                //    Debug.Log("Bubble Counter is: " + BubbleShooter.bubbleHitCounter);
             }
+        }
+
+        if (collision.tag.Equals("Enemy"))
+        {
+            audioManager.PlayFireHit();
+            gameObject.SetActive(false);
+            CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
         }
     }
 

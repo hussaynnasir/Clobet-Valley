@@ -10,6 +10,8 @@ public class Bubble : MonoBehaviour
 
     public float donutMoveSpeedCurrent = 0;
 
+    public float damageAmount = 10.0f;
+
     public bool donutMove;
 
     public string objectName;
@@ -24,7 +26,7 @@ public class Bubble : MonoBehaviour
         donutMove = false;
         rb2d = GetComponent<Rigidbody2D>();
         
-        if (objectName=="Bubble")
+        if (objectName=="Bubble" || objectName=="Bubble(Clone)")
         { 
             rb2d.velocity = new Vector2(-bubbleMoveSpeed, 0);
         }
@@ -94,9 +96,10 @@ public class Bubble : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Player"))
         {
-            HealthManager.curHealth -= 10;
+            HealthManager.curHealth -= damageAmount;
             gameObject.SetActive(false);
         }
+        
     }
 
 }

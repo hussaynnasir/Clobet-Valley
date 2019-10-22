@@ -33,7 +33,7 @@ public class Door : MonoBehaviour
     {
         sprt.sprite = doorSprites[1];
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         sprt.sprite = doorSprites[0];
 

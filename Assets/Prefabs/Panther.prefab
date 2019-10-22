@@ -47,6 +47,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 7.719999, y: 2.1}
   m_Direction: 1
+--- !u!1 &2681630475576199433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6737751911649002064}
+  m_Layer: 0
+  m_Name: EnemyShootPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6737751911649002064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681630475576199433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.19, y: 2.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3115665920160519983}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3115665920160519977
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +111,7 @@ Transform:
   m_LocalScale: {x: 0.5045041, y: 0.5045041, z: 0.5045041}
   m_Children:
   - {fileID: 1160071608}
+  - {fileID: 6737751911649002064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -203,11 +234,15 @@ MonoBehaviour:
   rb2d: {fileID: 1135277914}
   anim: {fileID: 3115665920160519980}
   mainCollider: {fileID: 1135277915}
+  enemyFireBall: {fileID: 6281234091663345771, guid: 280d160d78d48b94b989993e41b6ed80,
+    type: 3}
+  enemyShootPosition: {fileID: 6737751911649002064}
+  fireballSpeed: 10
   moving: 0
   dead: 0
   shoot: 0
-  enemyHealth: 1
-  enemyDamage: 25
+  enemyHealth: 2
+  enemyDamage: 20
   enemyMoveSpeed: 190
   deathCollider: {fileID: 1160071609}
   horizontalSpeedCheckLow: -4

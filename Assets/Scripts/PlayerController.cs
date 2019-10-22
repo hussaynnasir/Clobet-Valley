@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private bool moving;
     private bool runMove;
 
+    public static bool hide;
+
     //Check which direction player is looking in
     public static bool LookRight;
 
@@ -41,12 +43,12 @@ public class PlayerController : MonoBehaviour
     //The speed at the which the player will jump
     public float jumpSpeed = 7f;
 
-    public CapsuleCollider2D deathCollider;
+    public CapsuleCollider2D deathCollider, hideCollider;
 
     private CapsuleCollider2D normalCollider;
 
     public GameManager gameManager;
-    
+
 
 
     // Start is called before the first frame update
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
         //moveSpeed = moveSpeed * Time.deltaTime;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        
+
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         GetPositions();
@@ -77,12 +79,12 @@ public class PlayerController : MonoBehaviour
 
         InitialLocationSet();
 
-        if (GameManager.stageFinished==false)
-        { 
+        if (GameManager.stageFinished == false)
+        {
             AutoMovetoLocation();
         }
 
-        if (GameManager.stageFinished==true)
+        if (GameManager.stageFinished == true)
         {
             StopMove();
         }
@@ -92,9 +94,10 @@ public class PlayerController : MonoBehaviour
     private void DeathCheck()
     {
         dead = HealthManager.dead;
-        if (dead==true)
+        if (dead == true)
         {
             normalCollider.enabled = false;
+            hideCollider.enabled = false;
             deathCollider.enabled = true;
         }
         else
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!dead || !GameManager.stageFinished || !GameManager.checkpointReached) 
+        if (!dead || !GameManager.stageFinished || !GameManager.checkpointReached)
         {
             MovePlayer();
         }
@@ -126,10 +129,11 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Grounded", grounded);
         anim.SetBool("Dead", dead);
         anim.SetBool("Run", runMove);
+        anim.SetBool("Hide", hide);
     }
 
 
-    
+
 
     private void MovePlayer()
     {
@@ -166,6 +170,12 @@ public class PlayerController : MonoBehaviour
             {
                 StopAttack();
             }
+
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            {
+                Hide();
+            }
+
             {
                 /*
                      if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
@@ -179,11 +189,12 @@ public class PlayerController : MonoBehaviour
 
         //Check if the player has stopped moving
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)
-            || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W))
+            || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             //moving = false;
             //rb2d.velocity = new Vector2(0, 0);
             StopMove();
+            StopHiding();
         }
 
     }
@@ -197,7 +208,7 @@ public class PlayerController : MonoBehaviour
 
     private void InitialLocationSet()
     {
-        if (transform.position.x < positionInitial.x) 
+        if (transform.position.x < positionInitial.x)
         {
             transform.position = new Vector2(positionInitial.x, transform.position.y);
         }
@@ -205,11 +216,11 @@ public class PlayerController : MonoBehaviour
 
     private void DirectionCheck()
     {
-        if (sprt.flipX==false)
+        if (sprt.flipX == false)
         {
             LookRight = true;
         }
-        if (sprt.flipX==true)
+        if (sprt.flipX == true)
         {
             LookRight = false;
         }
@@ -243,11 +254,11 @@ public class PlayerController : MonoBehaviour
             moving = true;
         }
 
-        if (moveSpeed<0)
+        if (moveSpeed < 0)
         {
             sprt.flipX = true;
         }
-        if (moveSpeed>0)
+        if (moveSpeed > 0)
         {
             sprt.flipX = false;
         }
@@ -268,6 +279,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StopJump()
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
+    }
 
     public void Attack()
     {
@@ -281,6 +296,20 @@ public class PlayerController : MonoBehaviour
     public void StopAttack()
     {
         shoot = false;
+    }
+
+    public void Hide()
+    {
+        hide = true;
+        hideCollider.enabled = true;
+        normalCollider.enabled = false;
+    }
+
+    public void StopHiding()
+    {
+        hide = false;
+        hideCollider.enabled = false;
+        normalCollider.enabled = true;
     }
 
     private void CreateFireBall()

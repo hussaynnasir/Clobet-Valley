@@ -9,6 +9,7 @@ public class Panther : Enemy
     public float horizontalSpeedCheckLow = -4.0f, horizontalSpeedCheckHigh = 4.0f;
     public float horizontalMoveSpeed;
     public bool zameenNaalTakrao;
+    private bool runCouroutineOnce;
 
     // Start is called before the first frame update
     private new void Start()
@@ -36,12 +37,17 @@ public class Panther : Enemy
             moving = false;
         }
 
-        if (zameenNaalTakrao==true)
+        if (zameenNaalTakrao == true)
         {
+            if (runCouroutineOnce == false)
+            {
+                StartCoroutine(ShootFireBall());
+            }
             MoveToPlayer();
         }
         
         CheckMovementAnimation();
+        CheckDeath();
 
     }
 
@@ -86,14 +92,16 @@ public class Panther : Enemy
     {
         if (collision.gameObject.tag.Equals("PlayerFire"))
         {
-            SetDead();
+            ReduceHealth();
         }
     }
 
     private void MoveToPlayer()
     {
         if (!dead)
-        { 
+        {
+            moving = true;
+            anim.SetBool("Moving", true);
             rb2d.AddForce(new Vector2(enemyMoveSpeed * -10 * Time.deltaTime, 0));
         }
     }
@@ -131,5 +139,21 @@ public class Panther : Enemy
 
         yield return 0;
     }
+
+    public IEnumerator ShootFireBall()
+    {
+        if (shoot == false)
+        {
+            anim.SetBool("Shoot", true);
+            yield return new WaitForSeconds(1.0f);
+            shoot = false;
+            anim.SetBool("Shoot", false);
+            runCouroutineOnce = true;
+            yield return 0;
+
+        }
+    }
+
+    
     
 }

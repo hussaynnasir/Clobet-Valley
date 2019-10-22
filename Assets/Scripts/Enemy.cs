@@ -8,7 +8,13 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb2d;
     public Animator anim;
     public CapsuleCollider2D mainCollider;
-    
+
+    public GameObject enemyFireBall;
+    public Transform enemyShootPosition;
+    public float fireballSpeed = 10.0f;
+
+    private bool fireballCreated = false;
+
     public bool moving;
 
     public bool dead;
@@ -34,6 +40,8 @@ public class Enemy : MonoBehaviour
         {
             deathCollider = GameObject.Find("EnemyDeathCollider").GetComponent<CapsuleCollider2D>();
         }
+
+       
     }
 
     // Update is called once per frame
@@ -68,6 +76,44 @@ public class Enemy : MonoBehaviour
         deathCollider.enabled = true;
     }
 
-    
+    public void Attack()
+    {
+        if (shoot == true)
+        {
+            shoot = false;
+        }
+        shoot = true;
+        anim.SetBool("Shoot", true);
+    }
+
+    public void StopAttack()
+    {
+        shoot = false;
+        anim.SetBool("Shoot", false);
+        fireballCreated = true;
+    }
+
+    public void CreateFireball()
+    {
+        if (!fireballCreated)
+        {
+            GameObject fireBall = Instantiate(enemyFireBall, enemyShootPosition.position, Quaternion.identity) as GameObject;
+            fireBall.GetComponent<Rigidbody2D>().AddForce(Vector2.left * fireballSpeed);
+            StopAttack();
+        }
+    }
+
+    public void ReduceHealth()
+    {
+        enemyHealth -= 1;
+    }
+
+    public void CheckDeath()
+    {
+        if (enemyHealth <= 0)
+        {
+            SetDead();
+        }
+    }
 
 }

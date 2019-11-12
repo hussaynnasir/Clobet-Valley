@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2760016505411386040}
   - component: {fileID: 2760016505411386041}
   - component: {fileID: 2760016505411386047}
-  - component: {fileID: 2760016505411386046}
+  - component: {fileID: 57977404073875507}
   m_Layer: 0
   m_Name: Tube
   m_TagString: Pill
@@ -4768,8 +4768,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &2760016505411386046
-BoxCollider2D:
+--- !u!60 &57977404073875507
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4791,6 +4791,11 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.61, y: 1.27}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.195, y: 0.615}
+      - {x: -0.195, y: -0.545}
+      - {x: -0.105, y: -0.60499996}
+      - {x: 0.16499999, y: -0.60499996}
+      - {x: 0.175, y: -0.49499997}
+      - {x: 0.175, y: 0.615}

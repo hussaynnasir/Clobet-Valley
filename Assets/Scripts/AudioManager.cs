@@ -43,4 +43,9 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(audioClips[3]);
     }
+
+    public void PlayThroughDoorSound()
+    {
+        audioSource.PlayOneShot(audioClips[4]);
+    }
 }

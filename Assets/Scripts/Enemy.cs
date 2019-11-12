@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public Transform enemyShootPosition;
     public float fireballSpeed = 10.0f;
 
-    private bool fireballCreated = false;
+    public bool fireballCreated = false;
 
     public bool moving;
 
@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
         dead = true;
         mainCollider.enabled = false;
         deathCollider.enabled = true;
+        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
     }
 
     public void Attack()

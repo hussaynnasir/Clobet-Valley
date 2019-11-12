@@ -254,13 +254,16 @@ public class PlayerController : MonoBehaviour
             moving = true;
         }
 
-        if (moveSpeed < 0)
+        if (!dead)
         {
-            sprt.flipX = true;
-        }
-        if (moveSpeed > 0)
-        {
-            sprt.flipX = false;
+            if (moveSpeed < 0)
+            {
+                sprt.flipX = true;
+            }
+            if (moveSpeed > 0)
+            {
+                sprt.flipX = false;
+            }
         }
     }
 
@@ -303,6 +306,7 @@ public class PlayerController : MonoBehaviour
         hide = true;
         hideCollider.enabled = true;
         normalCollider.enabled = false;
+        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
     }
 
     public void StopHiding()
@@ -354,6 +358,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 HealthManager.curHealth += 4;
+                collision.gameObject.SetActive(false);
             }
         }
         

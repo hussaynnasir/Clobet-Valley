@@ -8,6 +8,8 @@ public class Door : MonoBehaviour
 
     public Sprite[] doorSprites;
 
+    public AudioManager audioManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class Door : MonoBehaviour
     {
         if (collision.tag.Equals("Player"))
         {
+            audioManager.PlayThroughDoorSound();
             StartCoroutine(DoorShift());
         }
     }

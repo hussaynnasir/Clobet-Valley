@@ -6,6 +6,8 @@ public class Bubble : MonoBehaviour
 {
     public float bubbleMoveSpeed = 2.0f;
 
+    public float barrelMoveSpeed = 2.0f;
+
     private int bubbleHealthCounter = 2;
 
     public float donutMoveSpeedCurrent = 0;
@@ -36,7 +38,12 @@ public class Bubble : MonoBehaviour
             bubbleHealthCounter = 1;
         }
 
-       
+        if (objectName == "Barrel" || objectName == "Barrel(Clone)")
+        {
+            rb2d.velocity = new Vector2(-barrelMoveSpeed, 0);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -59,6 +66,14 @@ public class Bubble : MonoBehaviour
                 rb2d.AddForce(new Vector2(-bubbleMoveSpeed * 10 * Time.deltaTime, 0));
                 donutMoveSpeedCurrent = rb2d.velocity.magnitude;
                 SetZRotation();
+            }
+        }
+
+        if (objectName == "Barrel" || objectName == "Barrel(Clone)")
+        {
+            if (donutMove == true)
+            {
+                rb2d.AddForce(new Vector2(-barrelMoveSpeed * 10 * Time.deltaTime, 0));
             }
         }
     }
@@ -98,6 +113,11 @@ public class Bubble : MonoBehaviour
         {
             HealthManager.curHealth -= damageAmount;
             gameObject.SetActive(false);
+        }
+
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
         
     }

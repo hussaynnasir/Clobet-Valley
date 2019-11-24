@@ -66,11 +66,11 @@ public class Panther : Enemy
             zameenNaalTakrao = true;
         }
 
-        if (collision.gameObject.tag.Equals("PlayerFire"))
-        {
-            SetDead();
-            CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
-        }
+        //if (collision.gameObject.tag.Equals("PlayerFire"))
+        //{
+          //  SetDead();
+            //CodeMonkey.Utils.UtilsClass.ShakeCamera(0.2f, 0.1f);
+        //}
 
         if (collision.gameObject.tag.Equals("Player"))
         {

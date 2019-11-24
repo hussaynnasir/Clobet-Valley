@@ -64,7 +64,7 @@ public class FireBall : MonoBehaviour
             }
         }
 
-        if (collision.tag.Equals("Enemy"))
+        if (collision.tag.Equals("Enemy") || collision.tag.Equals("Boss")) 
         {
             audioManager.PlayFireHit();
             gameObject.SetActive(false);

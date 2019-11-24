@@ -10,6 +10,8 @@ public class SceneController: MonoBehaviour
     public static string sceneName;
     private int sceneNo;
 
+    public GameObject pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,27 @@ public class SceneController: MonoBehaviour
         SceneManager.LoadScene("Level 3");
     }
 
+    public void LoadLevel4()
+    {
+        SceneManager.LoadScene("Level 4");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main_Menu");
+    }
+
+    public void PauseMenu()
+    {
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+    }
     
 
    

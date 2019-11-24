@@ -111,7 +111,7 @@ public class Enemy : MonoBehaviour
 
     public void CheckDeath()
     {
-        if (enemyHealth <= 0)
+        if (enemyHealth == 0 || enemyHealth < 0) 
         {
             SetDead();
         }

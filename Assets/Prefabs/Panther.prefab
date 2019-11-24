@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1160071608}
   - component: {fileID: 1160071609}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyDeathCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6737751911649002064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyShootPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1135277915}
   - component: {fileID: 3934374143095058097}
   - component: {fileID: 1971703845}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Panther
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -238,6 +238,7 @@ MonoBehaviour:
     type: 3}
   enemyShootPosition: {fileID: 6737751911649002064}
   fireballSpeed: 10
+  fireballCreated: 0
   moving: 0
   dead: 0
   shoot: 0

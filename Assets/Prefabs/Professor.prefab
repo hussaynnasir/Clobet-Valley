@@ -245,7 +245,7 @@ MonoBehaviour:
   enemyDamage: 20
   enemyMoveSpeed: 190
   deathCollider: {fileID: 1958831586}
-  horizontalSpeedCheckLow: -4
-  horizontalSpeedCheckHigh: 4
+  horizontalSpeedCheckLow: -2.5
+  horizontalSpeedCheckHigh: 2.5
   horizontalMoveSpeed: 0
   zameenNaalTakrao: 0

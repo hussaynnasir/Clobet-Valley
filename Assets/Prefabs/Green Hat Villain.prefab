@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1672296456}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ShootPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1961718699}
   - component: {fileID: 1961718700}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: DeathCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,9 +92,9 @@ GameObject:
   - component: {fileID: 134970311}
   - component: {fileID: 3875257854509609338}
   - component: {fileID: 3875257854509609337}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Green Hat Villain
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

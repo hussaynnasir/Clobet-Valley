@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
         deathPanel.SetActive(false);
         completionPanel.SetActive(false);
+
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame

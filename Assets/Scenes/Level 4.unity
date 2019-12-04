@@ -4404,6 +4404,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950423864}
   m_CullTransparentMesh: 0
+--- !u!1 &962897329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6281234091663345771, guid: 280d160d78d48b94b989993e41b6ed80,
+    type: 3}
+  m_PrefabInstance: {fileID: 3279227423003263779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &981064586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4478,6 +4484,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485efedfbb32cde4ebc2df2b73b9d57e, type: 3}
+--- !u!1 &981276417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981276418}
+  m_Layer: 0
+  m_Name: Hendo MovePosA
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981276418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981276417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.95, y: -1.15, z: -0.030102018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994653796
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,7 +5337,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1214219472
 Transform:
   m_ObjectHideFlags: 0
@@ -8010,7 +8046,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2066303490
 Transform:
   m_ObjectHideFlags: 0
@@ -8412,22 +8448,12 @@ PrefabInstance:
     - target: {fileID: 3875257856002128439, guid: ba980db18e6a4134c9ebcdd5da09b08b,
         type: 3}
       propertyPath: m_Name
-      value: Green Hat Villain
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875257856002128439, guid: ba980db18e6a4134c9ebcdd5da09b08b,
-        type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875257856002128439, guid: ba980db18e6a4134c9ebcdd5da09b08b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
+      value: Mr. Hendo
       objectReference: {fileID: 0}
     - target: {fileID: 3875257856002128437, guid: ba980db18e6a4134c9ebcdd5da09b08b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.496252
+      value: 9.04
       objectReference: {fileID: 0}
     - target: {fileID: 3875257856002128437, guid: ba980db18e6a4134c9ebcdd5da09b08b,
         type: 3}
@@ -8479,14 +8505,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1961718698, guid: ba980db18e6a4134c9ebcdd5da09b08b, type: 3}
-      propertyPath: m_Layer
-      value: 11
+    - target: {fileID: 3875257854509609338, guid: ba980db18e6a4134c9ebcdd5da09b08b,
+        type: 3}
+      propertyPath: enemyFireBall
+      value: 
+      objectReference: {fileID: 962897329}
+    - target: {fileID: 3875257854509609338, guid: ba980db18e6a4134c9ebcdd5da09b08b,
+        type: 3}
+      propertyPath: posA.x
+      value: 3.08
       objectReference: {fileID: 0}
-    - target: {fileID: 1672296455, guid: ba980db18e6a4134c9ebcdd5da09b08b, type: 3}
-      propertyPath: m_Layer
-      value: 11
+    - target: {fileID: 3875257854509609338, guid: ba980db18e6a4134c9ebcdd5da09b08b,
+        type: 3}
+      propertyPath: posA.y
+      value: -1.15
       objectReference: {fileID: 0}
+    - target: {fileID: 3875257854509609338, guid: ba980db18e6a4134c9ebcdd5da09b08b,
+        type: 3}
+      propertyPath: posA
+      value: 
+      objectReference: {fileID: 981276418}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba980db18e6a4134c9ebcdd5da09b08b, type: 3}
 --- !u!1001 &4398318562925198270

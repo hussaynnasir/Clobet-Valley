@@ -9,7 +9,7 @@ public class LabBalls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TurnOff();
+        StartCoroutine(TurnOff());
     }
 
     // Update is called once per frame

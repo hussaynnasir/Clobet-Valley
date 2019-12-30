@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static float pillCounter;
 
-    public float maxPills;
+    public static float maxPills;
 
     public Image pillBar;
 
@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int scenePills = GameObject.FindGameObjectsWithTag("Pill").Length;
+        pillCounter = 0;
+        float scenePills = GameObject.FindGameObjectsWithTag("Pill").Length;
         
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9020261912668840141}
   - component: {fileID: 9020261912668840140}
   - component: {fileID: 9020261912668840142}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Barrel
   m_TagString: Bubble
   m_Icon: {fileID: 0}

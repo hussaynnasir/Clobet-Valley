@@ -6225,8 +6225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble:
-  - {fileID: 7903642168853852449, guid: 485efedfbb32cde4ebc2df2b73b9d57e, type: 3}
   - {fileID: 3115665920160519977, guid: 11acb9cb938c8ef4581f695804a6e9b4, type: 3}
+  - {fileID: 7903642168853852449, guid: 485efedfbb32cde4ebc2df2b73b9d57e, type: 3}
   bubbleShootingPosition: {fileID: 1214219472}
   bubbleTravelSpeed: 50
   shooterMoveSpeed: 15
@@ -6368,7 +6368,7 @@ MonoBehaviour:
   bubbleTravelSpeed: 50
   shooterMoveSpeed: 15
   stopShootingBubbles: 0
-  BubbleSpawnTime: 15
+  BubbleSpawnTime: 6
   upperLimit: 3.68
   lowerLimit: 0.09
   lowerRange: 0
@@ -7111,6 +7111,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1fb9c3b13ee8fbd4189d3b0cdee17cfb, type: 3}
   - {fileID: 8300000, guid: 75356ce85ed76d84e9b6da00b6d9cabc, type: 3}
   - {fileID: 8300000, guid: a4f5cbe5bf98b864cadb97ceceb33fbe, type: 3}
+  - {fileID: 8300000, guid: fd5b1432877b8fd46a982709d58194b2, type: 3}
 --- !u!1001 &1372071242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9975,6 +9976,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994969484}
   m_CullTransparentMesh: 0
+--- !u!1 &2024629908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024629910}
+  - component: {fileID: 2024629909}
+  m_Layer: 0
+  m_Name: man_with_red_apron
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2024629909
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024629908}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -4
+  m_Sprite: {fileID: 21300000, guid: 675b2780762400c458ba9d4e96ae64de, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2024629910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024629908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 248, y: -1.25, z: 0}
+  m_LocalScale: {x: 0.537795, y: 0.537795, z: 0.537795}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050684541
 GameObject:
   m_ObjectHideFlags: 0
@@ -10363,7 +10443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc97b3d4fb895f4aa687f0966d9c165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPills: 0
   pillBar: {fileID: 726625254}
   deathPanel: {fileID: 1755897361}
   completionPanel: {fileID: 1805246778}
@@ -10901,16 +10980,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brown_Girl_Floza
       objectReference: {fileID: 0}
-    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
-        type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 1371129337}
-    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 2085976869}
     - target: {fileID: 2358684342928023174, guid: c7c9da2645b036c4183045362f98e58e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10966,6 +11035,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1371129337}
+    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2085976869}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c9da2645b036c4183045362f98e58e, type: 3}
 --- !u!1001 &3279227423003263779

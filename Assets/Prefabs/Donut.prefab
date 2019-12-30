@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7903642168853852450}
   - component: {fileID: 7903642168853852453}
   - component: {fileID: 7903642168853852454}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Donut
   m_TagString: Bubble
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleMoveSpeed: 4
+  barrelMoveSpeed: 2
   donutMoveSpeedCurrent: 0
   damageAmount: 20
   donutMove: 0

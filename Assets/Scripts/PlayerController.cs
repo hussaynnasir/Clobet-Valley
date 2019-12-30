@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
             normalCollider.enabled = false;
             hideCollider.enabled = false;
             deathCollider.enabled = true;
+            gameObject.layer = 13;
         }
         else
         {
@@ -360,6 +361,11 @@ public class PlayerController : MonoBehaviour
                 HealthManager.curHealth += 4;
                 collision.gameObject.SetActive(false);
             }
+        }
+
+        if (collision.tag.Equals("Consumable"))
+        {
+            audioManager.PlayCollectSound();
         }
         
         if (collision.tag.Equals("Checkpoint"))

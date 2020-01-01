@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - Bomb
   - Consumable
+  - BossInvulnerable
   layers:
   - Default
   - TransparentFX

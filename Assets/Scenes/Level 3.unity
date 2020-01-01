@@ -329,7 +329,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You Died!
+  m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 43.55
+  m_fontSize: 36.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2940,7 +2940,6 @@ MonoBehaviour:
   throwPoint: {fileID: 1663631396}
   throwPointPosition: {x: 0, y: 0}
   projectileSpeed: 10
-  stopShootProjectile: 0
   tuberTimer: 8
 --- !u!1 &639769114
 GameObject:
@@ -6227,7 +6226,6 @@ MonoBehaviour:
   throwPoint: {fileID: 990464049}
   throwPointPosition: {x: 0, y: 0}
   projectileSpeed: 10
-  stopShootProjectile: 0
   tuberTimer: 10
 --- !u!1 &1598729628
 GameObject:
@@ -7663,7 +7661,6 @@ MonoBehaviour:
   throwPoint: {fileID: 639769114}
   throwPointPosition: {x: 0, y: 0}
   projectileSpeed: 10
-  stopShootProjectile: 0
   tuberTimer: 8
 --- !u!1 &1898565374
 GameObject:
@@ -8070,7 +8067,6 @@ MonoBehaviour:
   throwPoint: {fileID: 1224838897}
   throwPointPosition: {x: 0, y: 0}
   projectileSpeed: 10
-  stopShootProjectile: 0
   tuberTimer: 10
 --- !u!1 &1968115366
 GameObject:
@@ -9072,7 +9068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc97b3d4fb895f4aa687f0966d9c165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPills: 0
   pillBar: {fileID: 726625254}
   deathPanel: {fileID: 1755897361}
   completionPanel: {fileID: 1805246778}

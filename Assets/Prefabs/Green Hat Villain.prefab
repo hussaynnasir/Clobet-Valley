@@ -171,6 +171,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0.30256194, y: -0.1764948}
   m_Size: {x: 6.261281, y: 1.540606}
   m_Direction: 1
+--- !u!1 &2087816840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087816841}
+  m_Layer: 11
+  m_Name: ShootPosition (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2087816841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087816840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.29, y: 0.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3875257856002128437}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3875257856002128439
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,11 +232,12 @@ Transform:
   m_GameObject: {fileID: 3875257856002128439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.75, y: -1.15, z: 0}
-  m_LocalScale: {x: 0.63750005, y: 0.63750005, z: 0.63750005}
+  m_LocalScale: {x: 0.63750005, y: 0.6375, z: 0.6375}
   m_Children:
   - {fileID: 1961718699}
   - {fileID: 1672296456}
   - {fileID: 1022641690}
+  - {fileID: 2087816841}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -328,7 +359,8 @@ MonoBehaviour:
   leftLimit: 0
   rightLimit: 9
   shootCheck: 0
-  shootIntervalTime: 12
+  shootIntervalTime: 6
+  scaleShootPosition: {fileID: 2087816841}
 --- !u!70 &3875257854509609337
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -357,9 +389,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d0545ac77ed4d4cad4640d72a7dc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _originalSize: {x: 0, y: 0, z: 0}
+  _targetSize: {x: 0, y: 0, z: 0}
+  targetWidth: 1
+  targetHeight: 1
+  targetDepth: 1
+  scaleSpeed: 0.2
+  invulnerableTime: 20
   enlargeEnemy: 0
   shrinkEnemy: 0
-  targetWidth: 0
-  targetHeight: 0
-  targetDepth: 0
-  scaleSpeed: 0
+  scaleRandLow: 8
+  scaleRandHigh: 16
+  bossInitialHealth: 0

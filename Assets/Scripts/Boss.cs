@@ -7,11 +7,16 @@ public class Boss : Enemy
     private SpriteRenderer _sprt;
     private bool _intervalShotCheck;
     private bool _dirRight;
+    private Scaler scaler;
     
     public float leftLimit = 0.0f, rightLimit = 9.0f;
     public bool shootCheck;
     //The time taken before the boss fires next shot
     public float shootIntervalTime = 5.0f;
+
+    public Transform scaleShootPosition;
+
+    private Transform originalShootPosition;
 
     // Start is called before the first frame update
     new void Start()
@@ -22,14 +27,26 @@ public class Boss : Enemy
         rb2d = GetComponentInParent<Rigidbody2D>();
         anim = GetComponentInParent<Animator>();
         mainCollider = GetComponentInParent<CapsuleCollider2D>();
+        scaler = GetComponent<Scaler>();
 
         _dirRight = false;
         _intervalShotCheck = false;
+        originalShootPosition = enemyShootPosition;
     }
 
     // Update is called once per frame
     new void Update()
     {
+        if (Scaler._scaleActive)
+        {
+            enemyShootPosition = scaleShootPosition;
+        }
+
+        if (!Scaler._scaleActive)
+        {
+            enemyShootPosition = originalShootPosition;
+        }
+
         if (rb2d.velocity.x != 0)
         {
             moving = true;
@@ -77,7 +94,10 @@ public class Boss : Enemy
     {
         if (collision.gameObject.tag.Equals("PlayerFire"))
         {
-            ReduceHealth();
+            if (!Scaler._scaleActive)
+            {
+                ReduceHealth();
+            }
         }
     }
 

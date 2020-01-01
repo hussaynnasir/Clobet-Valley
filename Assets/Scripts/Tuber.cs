@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class Tuber : MonoBehaviour
 {
-
     public GameObject projectile;
     public GameObject tubePosition;
-
     public GameObject throwPoint;
     public Vector2 throwPointPosition;
-
     public float projectileSpeed;
-
-    public bool stopShootProjectile;
-
     public float tuberTimer;
 
-   
-
-
+    private bool _stopShootProjectile;
 
     // Start is called before the first frame update
     void Start()
     {
-        stopShootProjectile = false;
+        _stopShootProjectile = false;
     }
 
     // Update is called once per frame
@@ -37,7 +29,7 @@ public class Tuber : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (stopShootProjectile==false)
+        if (_stopShootProjectile==false)
         {
             StartCoroutine(ShootOnce());
         }
@@ -53,14 +45,14 @@ public class Tuber : MonoBehaviour
             
     public void StopShoot()
     {
-        stopShootProjectile = true;
+        _stopShootProjectile = true;
     }
     
     private IEnumerator ShootOnce()
     {
         CreateProjectile();
         yield return new WaitForSeconds(tuberTimer);
-        stopShootProjectile = false;
+        _stopShootProjectile = false;
 
         yield return 0;
     }

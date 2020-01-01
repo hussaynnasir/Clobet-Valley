@@ -674,7 +674,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You Died!
+  m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 43.55
+  m_fontSize: 36.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10980,6 +10980,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brown_Girl_Floza
       objectReference: {fileID: 0}
+    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1371129337}
+    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2085976869}
     - target: {fileID: 2358684342928023174, guid: c7c9da2645b036c4183045362f98e58e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11035,16 +11045,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
-        type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 1371129337}
-    - target: {fileID: 2358684342928023178, guid: c7c9da2645b036c4183045362f98e58e,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 2085976869}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c9da2645b036c4183045362f98e58e, type: 3}
 --- !u!1001 &3279227423003263779

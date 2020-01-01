@@ -254,6 +254,7 @@ MonoBehaviour:
   jumpSpeed: 330
   deathCollider: {fileID: 1157370060}
   hideCollider: {fileID: 791934366}
+  normalCollider: {fileID: 2358684342928023176}
   gameManager: {fileID: 0}
 --- !u!50 &2358684342928023177
 Rigidbody2D:

@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     public CapsuleCollider2D deathCollider, hideCollider;
 
-    private CapsuleCollider2D normalCollider;
+    public CapsuleCollider2D normalCollider;
 
     public GameManager gameManager;
 
@@ -101,10 +101,16 @@ public class PlayerController : MonoBehaviour
             deathCollider.enabled = true;
             gameObject.layer = 13;
         }
-        else
+        else if (dead==false && hide==false)
         {
             deathCollider.enabled = false;
             normalCollider.enabled = true;
+        }
+        else if (hide==true && dead==false)
+        {
+            deathCollider.enabled = false;
+            normalCollider.enabled = false;
+            hideCollider.enabled = true;
         }
 
     }
@@ -304,10 +310,13 @@ public class PlayerController : MonoBehaviour
 
     public void Hide()
     {
-        hide = true;
-        hideCollider.enabled = true;
-        normalCollider.enabled = false;
-        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+        if (grounded)
+        {
+            hide = true;
+            hideCollider.enabled = true;
+            normalCollider.enabled = false;
+            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+        }
     }
 
     public void StopHiding()

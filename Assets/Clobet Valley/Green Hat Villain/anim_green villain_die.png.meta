@@ -1,24 +1,54 @@
 fileFormatVersion: 2
 guid: 61fde6125a513c64da0811e205065308
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: anim_green villain_die_0
-    21300002: anim_green villain_die_1
-    21300004: anim_green villain_die_2
-    21300006: anim_green villain_die_3
-    21300008: anim_green villain_die_4
-    21300010: anim_green villain_die_5
-    21300012: anim_green villain_die_6
-    21300014: anim_green villain_die_7
-    21300016: anim_green villain_die_8
-    21300018: anim_green villain_die_9
-    21300020: anim_green villain_die_10
-    21300022: anim_green villain_die_11
-    21300024: anim_green villain_die_12
-    21300026: anim_green villain_die_13
-    21300028: anim_green villain_die_14
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: anim_green villain_die_0
+  - first:
+      213: 21300002
+    second: anim_green villain_die_1
+  - first:
+      213: 21300004
+    second: anim_green villain_die_2
+  - first:
+      213: 21300006
+    second: anim_green villain_die_3
+  - first:
+      213: 21300008
+    second: anim_green villain_die_4
+  - first:
+      213: 21300010
+    second: anim_green villain_die_5
+  - first:
+      213: 21300012
+    second: anim_green villain_die_6
+  - first:
+      213: 21300014
+    second: anim_green villain_die_7
+  - first:
+      213: 21300016
+    second: anim_green villain_die_8
+  - first:
+      213: 21300018
+    second: anim_green villain_die_9
+  - first:
+      213: 21300020
+    second: anim_green villain_die_10
+  - first:
+      213: 21300022
+    second: anim_green villain_die_11
+  - first:
+      213: 21300024
+    second: anim_green villain_die_12
+  - first:
+      213: 21300026
+    second: anim_green villain_die_13
+  - first:
+      213: 21300028
+    second: anim_green villain_die_14
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -38,6 +68,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -46,9 +78,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -69,11 +101,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,7 +121,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -95,7 +133,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,7 +145,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -117,7 +157,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -128,6 +169,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -147,6 +201,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 324dd25168d112247811449c69cdc8e4
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -167,6 +222,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7238de2a63b015242b5e055f9a3b72f1
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -187,6 +243,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 88e3064320d3ee84eae4dead53e0a081
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -207,6 +264,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 53b07f0d6314ce64eae6c78fcff3f81a
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -227,6 +285,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0b11f99b16c786e468136ca02a0f1fc6
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -247,6 +306,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0848e8545f98fb5408dc1d13f4c95cee
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -267,6 +327,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 74c9556ed043ba84c9cf8bf44bb24764
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -287,6 +348,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d7e404e285dc07b4e883a8ed2965a1e3
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -307,6 +369,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 402a22ec743d3dd4095eaa20394439eb
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -327,6 +390,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 43a558d8503811c40836783f29f5d0a5
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -347,6 +411,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 75fa18ccb1a4c574b9ba4fcfe705ec4c
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -367,6 +432,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7e16da97ae4356d4182581ada977f6c8
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -387,6 +453,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f8c14e258c444bc458284063bdf95aec
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -407,6 +474,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0403b999c7fef9a43857d637ba51bcaf
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -427,6 +495,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e4eebf484e5a6194fae9902582b7edf6
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -435,10 +504,28 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 4f46c7f926b8737499dffd7da34fe1a8
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      anim_green villain_die_9: 21300018
+      anim_green villain_die_8: 21300016
+      anim_green villain_die_13: 21300026
+      anim_green villain_die_10: 21300020
+      anim_green villain_die_2: 21300004
+      anim_green villain_die_12: 21300024
+      anim_green villain_die_1: 21300002
+      anim_green villain_die_4: 21300008
+      anim_green villain_die_11: 21300022
+      anim_green villain_die_3: 21300006
+      anim_green villain_die_6: 21300012
+      anim_green villain_die_14: 21300028
+      anim_green villain_die_7: 21300014
+      anim_green villain_die_5: 21300010
+      anim_green villain_die_0: 21300000
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

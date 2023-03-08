@@ -1,24 +1,54 @@
 fileFormatVersion: 2
 guid: d789f8cee4a1a0e4cbe25f991511661d
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: char_panther_shoot_0
-    21300002: char_panther_shoot_1
-    21300004: char_panther_shoot_2
-    21300006: char_panther_shoot_3
-    21300008: char_panther_shoot_4
-    21300010: char_panther_shoot_5
-    21300012: char_panther_shoot_6
-    21300014: char_panther_shoot_7
-    21300016: char_panther_shoot_8
-    21300018: char_panther_shoot_9
-    21300020: char_panther_shoot_10
-    21300022: char_panther_shoot_11
-    21300024: char_panther_shoot_12
-    21300026: char_panther_shoot_13
-    21300028: char_panther_shoot_14
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: char_panther_shoot_0
+  - first:
+      213: 21300002
+    second: char_panther_shoot_1
+  - first:
+      213: 21300004
+    second: char_panther_shoot_2
+  - first:
+      213: 21300006
+    second: char_panther_shoot_3
+  - first:
+      213: 21300008
+    second: char_panther_shoot_4
+  - first:
+      213: 21300010
+    second: char_panther_shoot_5
+  - first:
+      213: 21300012
+    second: char_panther_shoot_6
+  - first:
+      213: 21300014
+    second: char_panther_shoot_7
+  - first:
+      213: 21300016
+    second: char_panther_shoot_8
+  - first:
+      213: 21300018
+    second: char_panther_shoot_9
+  - first:
+      213: 21300020
+    second: char_panther_shoot_10
+  - first:
+      213: 21300022
+    second: char_panther_shoot_11
+  - first:
+      213: 21300024
+    second: char_panther_shoot_12
+  - first:
+      213: 21300026
+    second: char_panther_shoot_13
+  - first:
+      213: 21300028
+    second: char_panther_shoot_14
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -38,6 +68,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -46,9 +78,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -69,11 +101,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,7 +121,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -95,7 +133,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,7 +145,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -117,7 +157,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -128,6 +169,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -147,6 +201,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 252d29a05f316794c8a48a37b02a0749
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -167,6 +222,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a2b643c0480a7a94caaa152a20632ee2
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -187,6 +243,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7a884aa57d458a04ea3b005717115819
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -207,6 +264,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7947ce4418a57504ca85a53ba666ceeb
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -227,6 +285,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 57eca38010cb8314cb9633842f67a208
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -247,6 +306,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c9dacb8058f53e544a121a7d6f1b70ef
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -267,6 +327,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4e07049ee133ee741a39655c578e7135
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -287,6 +348,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b844ce24358aedd42817216bb3ea28a5
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -307,6 +369,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fed2c956316fbdd4bb7f6c59781a0a2e
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -327,6 +390,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5f43850183359a04893bbb26e6443174
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -347,6 +411,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 361717278d47acd4fb0b895763d215af
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -367,6 +432,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 79410fe06cac5b94197a45d65b9dd7bb
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -387,6 +453,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f146fec52f08a5545a542d4b4f841dbb
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -407,6 +474,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: aed465920220dab44a92de7dece754ff
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -427,6 +495,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 33745b6d62a38fe4a9ed6c483c5a1b7a
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -435,10 +504,28 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: fe52a6b038fad3b449acd879a2693d1d
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      char_panther_shoot_11: 21300022
+      char_panther_shoot_4: 21300008
+      char_panther_shoot_12: 21300024
+      char_panther_shoot_14: 21300028
+      char_panther_shoot_8: 21300016
+      char_panther_shoot_3: 21300006
+      char_panther_shoot_13: 21300026
+      char_panther_shoot_7: 21300014
+      char_panther_shoot_1: 21300002
+      char_panther_shoot_10: 21300020
+      char_panther_shoot_9: 21300018
+      char_panther_shoot_5: 21300010
+      char_panther_shoot_2: 21300004
+      char_panther_shoot_0: 21300000
+      char_panther_shoot_6: 21300012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

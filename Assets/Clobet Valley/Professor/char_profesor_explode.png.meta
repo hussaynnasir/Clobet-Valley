@@ -1,24 +1,54 @@
 fileFormatVersion: 2
 guid: bbc7219b56c902842bf3258cbb15da5d
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: char_profesor_explode_0
-    21300002: char_profesor_explode_1
-    21300004: char_profesor_explode_2
-    21300006: char_profesor_explode_3
-    21300008: char_profesor_explode_4
-    21300010: char_profesor_explode_5
-    21300012: char_profesor_explode_6
-    21300014: char_profesor_explode_7
-    21300016: char_profesor_explode_8
-    21300018: char_profesor_explode_9
-    21300020: char_profesor_explode_10
-    21300022: char_profesor_explode_11
-    21300024: char_profesor_explode_12
-    21300026: char_profesor_explode_13
-    21300028: char_profesor_explode_14
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: char_profesor_explode_0
+  - first:
+      213: 21300002
+    second: char_profesor_explode_1
+  - first:
+      213: 21300004
+    second: char_profesor_explode_2
+  - first:
+      213: 21300006
+    second: char_profesor_explode_3
+  - first:
+      213: 21300008
+    second: char_profesor_explode_4
+  - first:
+      213: 21300010
+    second: char_profesor_explode_5
+  - first:
+      213: 21300012
+    second: char_profesor_explode_6
+  - first:
+      213: 21300014
+    second: char_profesor_explode_7
+  - first:
+      213: 21300016
+    second: char_profesor_explode_8
+  - first:
+      213: 21300018
+    second: char_profesor_explode_9
+  - first:
+      213: 21300020
+    second: char_profesor_explode_10
+  - first:
+      213: 21300022
+    second: char_profesor_explode_11
+  - first:
+      213: 21300024
+    second: char_profesor_explode_12
+  - first:
+      213: 21300026
+    second: char_profesor_explode_13
+  - first:
+      213: 21300028
+    second: char_profesor_explode_14
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -38,6 +68,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -46,9 +78,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -69,11 +101,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,7 +121,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -95,7 +133,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,7 +145,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -117,7 +157,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -128,6 +169,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -147,6 +201,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 19d87b183539bc34bba107f195bb1134
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -167,6 +222,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: aefe61671e2b045488cd47e0b392a63b
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -187,6 +243,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6a0d621dffe76e943a27ba745264d03b
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -207,6 +264,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 86b713ab411a95b499d0cce9c2cbe769
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -227,6 +285,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6323ec283f0bf124897f4db7ba9f88a6
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -247,6 +306,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1db896665bcfa2545a4b9a676d7e420a
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -267,6 +327,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6654cac532e7a214cbc6e46483a22d2e
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -287,6 +348,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: abd2af0eb6700634e90dbe710e3ace61
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -307,6 +369,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 89ea31408dd7c4f42ae4c7df081889e7
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -327,6 +390,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4c0897c3b07d5774397cab23242eb587
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -347,6 +411,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 48b8fc0e2ba190f46a85ff01e7960b03
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -367,6 +432,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cbf1889ac23e53f478fed76ff0ac4b68
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -387,6 +453,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2d35166b0e03e9f4296b8a9150bc782c
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -407,6 +474,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 07f41a5bb88a80740868bc301fc94b16
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -427,6 +495,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 590a67c4abbc0b34e926abdd96d9422c
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -435,10 +504,28 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: efe2acd0c86464b48971eb7a0b5c89b2
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      char_profesor_explode_2: 21300004
+      char_profesor_explode_5: 21300010
+      char_profesor_explode_8: 21300016
+      char_profesor_explode_11: 21300022
+      char_profesor_explode_6: 21300012
+      char_profesor_explode_3: 21300006
+      char_profesor_explode_14: 21300028
+      char_profesor_explode_12: 21300024
+      char_profesor_explode_13: 21300026
+      char_profesor_explode_7: 21300014
+      char_profesor_explode_4: 21300008
+      char_profesor_explode_0: 21300000
+      char_profesor_explode_1: 21300002
+      char_profesor_explode_10: 21300020
+      char_profesor_explode_9: 21300018
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
